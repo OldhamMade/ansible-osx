@@ -8,5 +8,5 @@
       git: repo=https://github.com/powerline/fonts
            dest=/tmp/.fonts/powerline
     - name: install powerline-fonts
-      script: HOME='' /tmp/.fonts/powerline/install.sh
+      script: /tmp/.fonts/powerline/install.sh
               creates=/Library/Fonts/Anonymice Powerline.ttf
