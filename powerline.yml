@@ -10,3 +10,5 @@
     - name: install powerline-fonts
       script: /tmp/.fonts/powerline/install.sh
               creates=/Library/Fonts/Anonymice Powerline.ttf
+      tags:
+        - debug
