@@ -1,0 +1,12 @@
+---
+- hosts: workstation
+
+  tasks:
+    - name: "mk $HOME/.fonts dir"
+      file: dest={{ansible_env.HOME}}/.fonts state=directory
+    - name: clone powerline-fonts
+      git: repo=https://github.com/powerline/fonts
+           dest={{ansible_env.HOME}}/.fonts/powerline
+    - name: install powerline-fonts
+      script: {{ansible_env.HOME}}/.fonts/powerline/install.sh
+              creates="{{ansible_env.HOME}}/Library/Fonts/Anonymice Powerline.ttf"
