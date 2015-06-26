@@ -8,5 +8,5 @@
       git: repo=https://github.com/OldhamMade/fonts
            dest=/tmp/.fonts/powerline
     - name: install powerline-fonts
-      script: /tmp/.fonts/powerline/install.sh --home={{user_home}}
-              creates=/Library/Fonts/Anonymice Powerline.ttf
+      script: "/tmp/.fonts/powerline/install.sh --home={{user_home}}
+              creates=/Library/Fonts/Anonymice Powerline.ttf"
