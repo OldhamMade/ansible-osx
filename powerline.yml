@@ -2,9 +2,6 @@
 - hosts: workstation
 
   tasks:
-    - fail: msg="Bailing out. this play requires 'user_home'"
-      when: user_home is not defined
-
     - name: "mk /tmp/.fonts dir"
       file: dest=/tmp/.fonts state=directory
 
