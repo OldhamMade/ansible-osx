@@ -15,3 +15,5 @@
       register: result
 
     - debug: var=result
+
+    - file: path="{{user_home}}/Library/Fonts/Anonymice Powerline.ttf" state=file
