@@ -9,4 +9,4 @@
            dest=/tmp/.fonts/powerline
     - name: install powerline-fonts
       script: "/tmp/.fonts/powerline/install.sh --home={{user_home}}
-              creates=/Library/Fonts/Anonymice Powerline.ttf"
+              creates={{user_home}}/Library/Fonts/Anonymice Powerline.ttf"
