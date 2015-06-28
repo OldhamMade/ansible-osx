@@ -10,7 +10,7 @@
     - name: preparing to install powerline-fonts
       debug: msg="preparing to install into {{user_home}}"
     - name: install powerline-fonts
-      command: "/tmp/.fonts/powerline/install.sh --home={{user_home}} creates={{user_home}}/Library/Fonts/Anonymice Powerline.ttf"
+      raw: "/tmp/.fonts/powerline/install.sh --home={{user_home}} creates={{user_home}}/Library/Fonts/Anonymice Powerline.ttf"
       register: result
 
     - debug: var=result
