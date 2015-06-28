@@ -2,13 +2,19 @@
 - hosts: workstation
 
   tasks:
+    - fail: msg="Bailing out. this play requires 'user_home'"
+      when: user_home is not defined
+
     - name: "mk /tmp/.fonts dir"
       file: dest=/tmp/.fonts state=directory
+
     - name: clone powerline-fonts
       git: repo=https://github.com/OldhamMade/fonts
            dest=/tmp/.fonts/powerline
+
     - name: preparing to install powerline-fonts
       debug: msg="preparing to install into {{user_home}}"
+
     - name: install powerline-fonts
       raw: "/tmp/.fonts/powerline/install.sh --home={{user_home}} creates={{user_home}}/Library/Fonts/Anonymice Powerline.ttf"
       register: result
