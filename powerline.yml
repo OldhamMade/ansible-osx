@@ -15,9 +15,9 @@
     - name: install powerline-fonts
       sudo: true
       sudo_user: "{{ user }}"
-      shell: "/tmp/.fonts/powerline/install.sh creates=~/Library/Fonts/Anonymice Powerline.ttf"
+      shell: "/tmp/.fonts/powerline/install.sh creates=$HOME/Library/Fonts/Anonymice Powerline.ttf"
       register: result
 
     - debug: var=result
 
-    - file: path="~/Library/Fonts/Anonymice Powerline.ttf" state=file
+    - file: path="$HOME/Library/Fonts/Anonymice Powerline.ttf" state=file
