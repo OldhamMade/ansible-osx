@@ -13,7 +13,7 @@
       debug: msg="preparing to install"
 
     - name: install powerline-fonts
-      script: "/tmp/.fonts/powerline/install.sh --home={{ user_home }} creates={{ user_home }}/Library/Fonts/Anonymice Powerline.ttf"
+      script: "/tmp/.fonts/powerline/install.sh --home={{ user_home }}"
       register: result
 
     - debug: var=result
