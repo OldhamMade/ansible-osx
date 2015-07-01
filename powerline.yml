@@ -13,11 +13,9 @@
       debug: msg="preparing to install"
 
     - name: install powerline-fonts
-      sudo: true
-      sudo_user: "{{ user }}"
-      shell: "/tmp/.fonts/powerline/install.sh creates=$HOME/Library/Fonts/Anonymice Powerline.ttf"
+      script: "/tmp/.fonts/powerline/install.sh --home={{ user_home }} creates={{ user_home }/Library/Fonts/Anonymice Powerline.ttf"
       register: result
 
     - debug: var=result
 
-    - file: path="$HOME/Library/Fonts/Anonymice Powerline.ttf" state=file
+    - file: path="{{ user_home }}/Library/Fonts/Anonymice Powerline.ttf" state=file
